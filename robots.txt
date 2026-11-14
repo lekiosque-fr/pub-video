@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lekiosque-fr.github.io/pub-video/sitemap.xml
