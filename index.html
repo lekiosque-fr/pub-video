@@ -294,5 +294,18 @@ document.getElementById('f').addEventListener('submit',function(e){
  location.href='mailto:lekiosquestudio01@gmail.com?subject='+encodeURIComponent('Ma vidéo · '+(d.get('commerce')||''))+'&body='+encodeURIComponent(t);
 });
 </script>
+<script>
+/* Compteur de visites gratuit et anonyme (aucun cookie, aucune donnée personnelle) : une visite par personne et par jour. */
+(function(){var R='https://ntfy.sh/kq-visites-19ec94dee7cb',P='cash';
+function envoi(t){try{fetch(R,{method:'POST',body:t,mode:'no-cors',keepalive:true,credentials:'omit'});}catch(e){}}
+if(navigator.webdriver)return;
+var s='direct';try{var u=new URLSearchParams(location.search).get('utm_source');var r=document.referrer||'';
+if(u)s=u.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,20);else if(/pinterest|pin\.it/.test(r))s='pinterest';else if(/google\./.test(r))s='google';else if(/facebook|fb\.|instagram/.test(r))s='facebook';else if(/tiktok/.test(r))s='tiktok';else if(r&&r.indexOf(location.hostname)<0)s='autre';}catch(e){}
+var j=new Date().toISOString().slice(0,10),deja=false;try{deja=localStorage.getItem('kq_vu_'+P)===j;localStorage.setItem('kq_vu_'+P,j);}catch(e){}
+if(!deja)envoi('v|'+P+'|'+s);
+document.querySelectorAll('a[href^="mailto:"],a[href^="tel:"],a[href*="wa.me"]').forEach(function(a){a.addEventListener('click',function(){envoi('c|'+P+'|contact');});});
+var f=document.getElementById('f');if(f)f.addEventListener('submit',function(){envoi('c|'+P+'|contact');});
+})();
+</script>
 </body>
 </html>
