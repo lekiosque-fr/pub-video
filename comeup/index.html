@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Le Kiosque Studio sur ComeUp</title><meta name="robots" content="noindex">
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#16203e;color:#fff;font-family:system-ui,sans-serif;text-align:center;padding:16px}
+a{color:#ffc83d;font-weight:700}</style></head>
+<body><main><p style="font-size:20px;font-weight:800">Le Kiosque Studio</p><p>On vous emmène sur ComeUp…</p>
+<p><a id="lien" href="https://comeup.com/fr/@lekiosquestudio">Continuer vers ComeUp</a></p></main>
+<script>
+/* Compteur de visites gratuit et anonyme (aucun cookie, aucune donnée personnelle), puis direction ComeUp.
+   Lien : …/comeup/?s=montage&utm_source=tiktok  (s = montage, miniature, pub, anime, motif ; sans s = la page du vendeur) */
+(function(){var R='https://ntfy.sh/kq-visites-19ec94dee7cb',P='comeup';
+var S={montage:'https://comeup.com/fr/service/565270/monter-votre-reel-tiktok-ou-short-avec-des-sous-titres-animes',
+miniature:'https://comeup.com/fr/service/565281/creer-la-miniature-de-votre-video-youtube-short-reel-ou-tiktok',
+pub:'https://comeup.com/fr/service/565285/creer-la-pub-video-de-30-secondes-de-votre-commerce-a-partir-de-vos-photos',
+anime:'https://comeup.com/fr/service/565286/creer-votre-video-animee-avec-un-personnage-pour-tiktok-reels-et-shorts',
+motif:'https://comeup.com/fr/service/565289/creer-le-motif-de-votre-t-shirt-ou-mug-pret-a-imprimer'};
+var q=new URLSearchParams(location.search),k=(q.get('s')||'').toLowerCase(),cible=S[k]||'https://comeup.com/fr/@lekiosquestudio';
+document.getElementById('lien').href=cible;
+function envoi(t){try{fetch(R,{method:'POST',body:t,mode:'no-cors',keepalive:true,credentials:'omit'});}catch(e){}}
+if(!navigator.webdriver){
+var s='direct';try{var u=q.get('utm_source');var r=document.referrer||'';
+if(u)s=u.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,20);else if(/pinterest|pin\.it/.test(r))s='pinterest';else if(/google\./.test(r))s='google';else if(/facebook|fb\.|instagram/.test(r))s='facebook';else if(/tiktok/.test(r))s='tiktok';else if(r)s='autre';}catch(e){}
+var j=new Date().toISOString().slice(0,10),cle='kq_vu_'+P+'_'+(k||'profil'),deja=false;try{deja=localStorage.getItem(cle)===j;localStorage.setItem(cle,j);}catch(e){}
+if(!deja){envoi('v|'+P+'|'+s);envoi('c|'+P+'|'+(S[k]?k:'profil'));}}
+setTimeout(function(){location.replace(cible);},350);})();
+</script></body></html>
